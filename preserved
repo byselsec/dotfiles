@@ -1,0 +1,10 @@
+.bashrc
+.bash_profile
+.profile
+.prompts
+.gdbinit
+.emacs
+.emacs.d
+.functions
+.gef.rc
+.xinitrc
