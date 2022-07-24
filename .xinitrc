@@ -2,6 +2,10 @@
 
 exec 2>~/.Xlog
 
+source ~/.profile
+
+# keyboard lang
+setxkbmap -option grp:win_space_toggle us,ru
 
 # touchpad buttons config
 synclient TapButton1=1 TapButton2=3 TapButton3=2
@@ -13,11 +17,15 @@ slstatus &
 # fade mouse if inactive after N seconds
 #unclutter -grab -idle 3 &
 
+# screen lock
 light-locker &
 
+# wifi systray applet
+nm-applet &
+
 # recompile dwm, st and probably other stuff with new theme(and maybe new config.h)
-#setbg /home/mathway/pics/wals/zerotwo2.jpg
-xwallpaper --zoom /home/mathway/pics/wals/gentoo_cool.jpg
+#setbg /home/mathway/pics/wals/kali-ascii.png 
+xwallpaper --zoom /home/mathway/pics/wals/kali-ascii.png
 
 
 # setting PWD to home directory
@@ -26,8 +34,12 @@ cd
 # disable touchpad while typing
 syndaemon -d -t
 
+# natural scrolling for touchpad
+synclient VertScrollDelta=-70
+synclient HorizScrollDelta=-70
+
 # fade lcd when power is too low
-sudo powermon -d -min 55% &
+sudo powermon -d -min 20% &
 
 # starting X composite manager
 # in order to do some funny stuff
@@ -36,8 +48,7 @@ sudo powermon -d -min 55% &
 compton &
 
 # smart way to run dwm
-#exec dbus-launch --sh-syntax --exit-with-session dwm
 
 while true; do
-      dwm
+    dbus-launch --sh-syntax --exit-with-session dwm
 done

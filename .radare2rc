@@ -1,0 +1,58 @@
+# ############################# CFG ##############################
+# fortunes at session startup
+e cfg.fortunes = true
+e cfg.fortunes.type = fun,tips
+
+e cfg.editor = emacsclient
+
+# use io.cache.read when binary has relocs
+e bin.cache = true
+
+# more verbose RBin warnings
+e bin.verbose = true
+
+# show descreptions in tab completion
+e cfg.newtab = true
+
+# ############################# SCR ##############################
+# set a pager
+e scr.pager = less -i -r
+
+# show flag in prompt
+e scr.prompt.flag = true
+
+# progress bar when scripts are running
+e scr.progressbar = true
+
+# enable colors in grep
+e scr.color.grep = true
+
+# confirm on quit
+e scr.confirmquit=true
+
+# maximum completion options
+e scr.maxtab = 20
+
+# #############################  DBG ##############################
+# make breakpoints relocatable
+e dbg.bpinmaps = false
+
+# break on fork
+e dbg.forks = true
+
+# break on entry
+e dbg.bep = entry
+
+# show arguments to functions in visual mode
+e dbg.funcarg = true
+
+# ############################# ASM ##############################
+# disable raw bytes in disassembly
+e asm.bytes = false
+
+# ############################# STACK ##############################
+# stack size in visual debugger
+e stack.size = 96
+
+# ############################# ANAL ##############################
+# e anal.verbose = true

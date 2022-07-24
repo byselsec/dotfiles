@@ -8,3 +8,4 @@
 .functions
 .gef.rc
 .xinitrc
+.radare2rc

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MANPATH=~/.local/share/man:"${MANPATH}"
-EMACS_SOCKET_NAME=/tmp/emacs`id -u`/server ; export EMACS_SOCKET_NAME
+#EMACS_SOCKET_NAME=/tmp/emacs`id -u`/server ; export EMACS_SOCKET_NAME
 PATH=~/.local/bin:"${PATH}"
 PATH=~/.local/python/bin:"${PATH}"
 

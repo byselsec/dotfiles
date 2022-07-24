@@ -28,6 +28,9 @@
 ;; customising cpreproc indentation
 (require 'ppindent)
 
+;; python config
+(add-hook 'python-mode-hook 'show-paren-mode)
+
 ;; ;; bash completion
 ;; (require 'bash-completion)
 ;; (bash-completion-setup)
@@ -79,12 +82,12 @@
  '(erc-server "irc.libera.chat")
  '(ispell-dictionary nil)
  '(markdown-command-needs-filename t)
- '(markdown-open-command "mdbrowse.sh")
+ '(markdown-open-command "mdbrowse.sh" t)
  '(package-selected-packages
-   '(spacemacs-theme bash-completion company-shell lua-mode jedi company-jedi company-irony company-irony-c-headers flycheck-irony edit-indirect markdown-mode)))
+   '(dashboard spacemacs-theme bash-completion company-shell lua-mode jedi company-jedi company-irony company-irony-c-headers flycheck-irony edit-indirect markdown-mode)))
 
 
-(set-face-attribute 'default nil :height 140)
+(set-face-attribute 'default nil :height 120)
 
 ;; When using quoted-insert, which is typically bound to C-q,
 ;; use hex number instead of octal to specify character to insert.

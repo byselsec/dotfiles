@@ -5,7 +5,7 @@ default_mode = 64
 [context]
 clear_screen = True
 enable = True
-grow_stack_down = False
+grow_stack_down = True
 ignore_registers = 
 layout = legend regs stack code args trace
 libc_args = False
