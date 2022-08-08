@@ -83,7 +83,7 @@
 
 ;; Markdown and GFX mode configuration
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
-(setq markdown-open-command "mdbrowse.sh")
+(setq markdown-open-command "mdbrowse")
 
 ;;(add-hook 'sh-mode-hook 'company-mode)
 

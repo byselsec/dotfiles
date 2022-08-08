@@ -56,3 +56,11 @@ swap() {
     local TMPFILE=tmp.$$
     mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE "$2"
 }
+
+rms() {
+    if [ $# -lt 1 ]; then
+	printf "Shred & rm file\nUsage: rms <file>...\n"
+    else
+	shred -zfn3 "$@" && rm -f "$@"
+    fi
+}

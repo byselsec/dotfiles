@@ -1,5 +1,6 @@
 .bashrc
 .bash_profile
+.bash_aliases
 .profile
 .prompts
 .gdbinit
@@ -8,3 +9,5 @@
 .gef.rc
 .xinitrc
 .radare2rc
+.pwn.conf
+
