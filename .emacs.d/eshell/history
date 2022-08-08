@@ -1,6 +1,0 @@
-1 + 2
-+ 1 2
-whoam
-whoami
-(+ 1 2)
-format "Hello, World %d" 10

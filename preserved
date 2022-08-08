@@ -4,7 +4,6 @@
 .prompts
 .gdbinit
 .emacs
-.emacs.d
 .functions
 .gef.rc
 .xinitrc

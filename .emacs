@@ -5,23 +5,85 @@
 (add-to-list 'package-archives
 	     '("melpa-stable"
 	       . "https://stable.melpa.org/packages/") t)
-(require 'rate-sx)
 
 ;; for gui version of emacs - connecting to X clipboard
 (setq x-select-enable-clipboard t)
 
-;; customising C-mode
+;; customising c-mode
 (setq c-default-style "linux"
       c-basic-offset 4)
 
 (add-hook 'c-mode-hook 'company-mode)
 (add-hook 'c-mode-hook 'flycheck-mode)
+(add-hook 'c-mode-hook 'show-paren-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+
+;; customizing c++-mode
 (add-hook 'c++-mode-hook 'company-mode)
 (add-hook 'c++-mode-hook 'flycheck-mode)
+(add-hook 'c++-mode-hook 'show-paren-mode)
+(add-hook 'c++-mode-hook 'irony-mode)
+
+;; Irony minor mode configuration
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+(eval-after-load 'company
+    '(add-to-list 'company-backends 'company-irony))
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+
+(defun get-include-guard ()
+  "Return a string suitable for use in a C/C++ include guard"
+  (let* ((fname (buffer-file-name (current-buffer)))
+         (fbasename (replace-regexp-in-string ".*/" "" fname))
+         (inc-guard-base (replace-regexp-in-string "[.-]"
+                                                   "_"
+                                                   fbasename)))
+    (concat (upcase inc-guard-base) "_")))
+
+(defun insert-include-guard()
+  "Inserts include guard in current buffer"
+  (interactive)
+  (let ((file-name (buffer-file-name (current-buffer))))
+    (when (string= ".h" (substring file-name -2))
+      (let ((include-guard (get-include-guard)))
+        (insert "#ifndef " include-guard)
+        (newline)
+        (insert "#define " include-guard)
+        (newline 4)
+        (insert "#endif")
+        (newline)
+        (previous-line 3)
+        (set-buffer-modified-p nil)))))
+
+;; Add automatically header guards in new header files.
+(add-hook 'find-file-not-found-functions
+          '(lambda ()
+             (let ((file-name (buffer-file-name (current-buffer))))
+               (when (string= ".h" (substring file-name -2))
+                 (let ((include-guard (get-include-guard)))
+                   (insert "#ifndef " include-guard)
+                   (newline)
+                   (insert "#define " include-guard)
+                   (newline 4)
+                   (insert "#endif")
+                   (newline)
+                   (previous-line 3)
+                   (set-buffer-modified-p nil))))))
+
+
+
+;; Customizing rust-mode
+;; rust likes spaces, not tabs
+(add-hook 'rust-mode-hook
+          (lambda () (setq indent-tabs-mode nil)))
+(add-hook 'rust-mode-hook
+	  'flycheck-mode)
+(with-eval-after-load 'rust-mode
+  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
 ;; Markdown and GFX mode configuration
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
-(setq markdown-open-command "mdopen.sh")
+(setq markdown-open-command "mdbrowse.sh")
 
 ;;(add-hook 'sh-mode-hook 'company-mode)
 
@@ -82,9 +144,9 @@
  '(erc-server "irc.libera.chat")
  '(ispell-dictionary nil)
  '(markdown-command-needs-filename t)
- '(markdown-open-command "mdbrowse.sh" t)
+ '(markdown-open-command "mdbrowse.sh")
  '(package-selected-packages
-   '(dashboard spacemacs-theme bash-completion company-shell lua-mode jedi company-jedi company-irony company-irony-c-headers flycheck-irony edit-indirect markdown-mode)))
+   '(flycheck-rust rust-mode dashboard spacemacs-theme bash-completion company-shell lua-mode jedi company-jedi company-irony company-irony-c-headers flycheck-irony edit-indirect markdown-mode)))
 
 
 (set-face-attribute 'default nil :height 120)
@@ -94,59 +156,6 @@
 (setq read-quoted-char-radix 16)
 
 
-;; Irony minor mode configuration
-(add-hook 'c++-mode-hook 'irony-mode)
-(add-hook 'c-mode-hook 'irony-mode)
-(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-
-(eval-after-load 'company
-    '(add-to-list 'company-backends 'company-irony))
-
-(eval-after-load 'flycheck
-  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
-
-
-
-
-(defun get-include-guard ()
-  "Return a string suitable for use in a C/C++ include guard"
-  (let* ((fname (buffer-file-name (current-buffer)))
-         (fbasename (replace-regexp-in-string ".*/" "" fname))
-         (inc-guard-base (replace-regexp-in-string "[.-]"
-                                                   "_"
-                                                   fbasename)))
-    (concat (upcase inc-guard-base) "_")))
-
-(defun insert-include-guard()
-  "Inserts include guard in current buffer"
-  (interactive)
-  (let ((file-name (buffer-file-name (current-buffer))))
-    (when (string= ".h" (substring file-name -2))
-      (let ((include-guard (get-include-guard)))
-        (insert "#ifndef " include-guard)
-        (newline)
-        (insert "#define " include-guard)
-        (newline 4)
-        (insert "#endif")
-        (newline)
-        (previous-line 3)
-        (set-buffer-modified-p nil)))))
-
-;; Add automatically header guards in new header files.
-(add-hook 'find-file-not-found-functions
-          '(lambda ()
-             (let ((file-name (buffer-file-name (current-buffer))))
-               (when (string= ".h" (substring file-name -2))
-                 (let ((include-guard (get-include-guard)))
-                   (insert "#ifndef " include-guard)
-                   (newline)
-                   (insert "#define " include-guard)
-                   (newline 4)
-                   (insert "#endif")
-                   (newline)
-                   (previous-line 3)
-                   (set-buffer-modified-p nil))))))
-(put 'upcase-region 'disabled nil)
 
 ;; Hide tool bar
 (tool-bar-mode -1)
@@ -193,6 +202,8 @@
 
 ;; ;; Set emacs own source directory
 ;; (setq source-directory "/usr/src/emacs-27.1+1")
+
+(put 'upcase-region 'disabled nil)
 
 ;; Disable scroll bar
 (scroll-bar-mode 0)

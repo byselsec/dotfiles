@@ -2,7 +2,5 @@
 
 prefix=$HOME
 
-for f in $(cat preserved); do
-	cp -prv "$f" "$prefix"
-done
+ln -s -t "$prefix" $(cat preserved) 
 
