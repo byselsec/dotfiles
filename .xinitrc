@@ -27,7 +27,6 @@ nm-applet &
 #setbg /home/mathway/pics/wals/kali-ascii.png 
 xwallpaper --zoom /home/mathway/pics/wals/kali-ascii.png
 
-
 # setting PWD to home directory
 cd
 
@@ -39,7 +38,7 @@ synclient VertScrollDelta=-70
 synclient HorizScrollDelta=-70
 
 # fade lcd when power is too low
-sudo powermon -d -min 20% &
+sudo powermon -d -min 30% &
 
 # starting X composite manager
 # in order to do some funny stuff
@@ -47,8 +46,11 @@ sudo powermon -d -min 20% &
 
 compton &
 
-# smart way to run dwm
+# SSH agent config
+eval $(ssh-agent -s)
+ssh-add -q ~/.ssh/id_rsa_eva
 
+# smart way to run dwm
 while true; do
     dbus-launch --sh-syntax --exit-with-session dwm
 done

@@ -34,7 +34,7 @@ source ~/.functions
 
 # Control how bash handles history of commands
 HISTCONTROL=ignoreboth
-HISTIGNORE="ls:[bf]g:exit:history"
+HISTIGNORE="ls:[bf]g:exit:history:trans"
 HISTSIZE=-1
 
 # Cd to directory by just typing its name

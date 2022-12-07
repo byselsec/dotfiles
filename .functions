@@ -5,7 +5,7 @@
 # complete detaching a process from
 # a tty
 noterm() {
-    nohup $*  </dev/null &>/dev/null &
+    nohup "$@"  </dev/null &>/dev/null &
     disown %nohup
 }
 

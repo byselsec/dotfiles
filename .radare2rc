@@ -31,7 +31,7 @@ e scr.color.grep = true
 e scr.confirmquit=true
 
 # maximum completion options
-e scr.maxtab = 20
+e scr.maxtab = 10000
 
 # #############################  DBG ##############################
 # make breakpoints relocatable
