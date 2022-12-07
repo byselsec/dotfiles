@@ -21,7 +21,7 @@ status() {
 }
 
 status_prompt() {
-    PS1="${RED_FG}[${YELLOW_FG}\u${GREEN_FG}@${CYAN_FG}\h ${MAGENTA_FG}\W${RED_FG}]${RED_FG}\`status\`${BLUE_FG}\$${DEFAULT_FG} "
+    PS1="${RED_FG}[${YELLOW_FG}\u${GREEN_FG}@${CYAN_FG}\h ${MAGENTA_FG}\W${RED_FG}]${RED_FG}\`status\`${BLUE_FG}\\$ ${DEFAULT_FG}"
 }
 jobs_prompt() {
     PS1='\[\033[01;34m\][\[\033[01;32m\]\u\[\033[01;34m\] \W][\[\033[01;32m\]j\j\[\033[01;34m\]][\[\033[01;32m\]$?\[\033[01;34m\]]\$\[\033[00m\] '
