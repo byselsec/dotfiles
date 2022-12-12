@@ -29,3 +29,5 @@ alias cls='clear'
 alias vpn='protonvpn-cli'
 
 alias ip='ip -c'
+
+alias hst="history | cut -c 8- | sort | uniq | fzf | tr '\\n' ' ' | xclip -sel c"
