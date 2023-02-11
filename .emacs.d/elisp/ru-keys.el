@@ -7,7 +7,9 @@
 (global-set-key [?\C-т] 'next-line)
 (global-set-key [?\M-а] 'forward-word)
 (global-set-key [?\M-и] 'backward-word)
- 
+(global-set-key [?\C-а] 'forward-char)
+(global-set-key [?\C-и] 'backward-char)
+
 (global-set-key [?\C-в] 'delete-char)
 (global-set-key [?\M-в] 'kill-word)
 (global-set-key [?\M-г] 'upcase-word)

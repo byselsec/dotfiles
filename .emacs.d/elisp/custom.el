@@ -15,9 +15,8 @@
  '(bookmark-save-flag 1)
  '(company-idle-delay 0)
  '(completion-cycle-threshold nil)
- '(custom-enabled-themes '(spacemacs-dark))
- '(custom-safe-themes
-   '("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))
+ '(custom-enabled-themes '(deeper-blue))
+ '(dired-listing-switches "-alF --group-directories-first")
  '(display-line-numbers-type 'relative)
  '(erc-modules
    '(autojoin button completion fill irccontrols list log match menu move-to-prompt netsplit networks noncommands notifications readonly ring smiley stamp spelling track) nil nil "erc modules customization")
@@ -44,6 +43,7 @@
 	 ("\\?\\?\\?+" . "#dc752f")))
  '(isearch-yank-on-move 'shift)
  '(ispell-dictionary nil)
+ '(line-move-visual nil)
  '(markdown-command-needs-filename t)
  '(markdown-open-command "mdbrowse" t)
  '(next-line-add-newlines nil)
@@ -61,7 +61,9 @@
  '(send-mail-function 'sendmail-send-it)
  '(sentence-end-double-space nil)
  '(tab-width 4)
- '(user-mail-address "mathway.home@gmail.com"))
+ '(user-mail-address "mathway.home@gmail.com")
+ '(warning-suppress-log-types '((comp) (comp)))
+ '(warning-suppress-types '((comp))))
 
 
 

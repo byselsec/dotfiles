@@ -30,4 +30,9 @@ alias vpn='protonvpn-cli'
 
 alias ip='ip -c'
 
-alias hst="history | cut -c 8- | sort | uniq | fzf | tr '\\n' ' ' | xclip -sel c"
+alias hst="history | cut -c 8- | sort -u | fzf | tr '\\n' ' '"
+alias hstc="history | cut -c 8- | sort -u | fzf | tr '\\n' ' ' | xclip -sel c"
+
+# work around unknown 'st-256color' terminal
+alias ssh='TERM=xterm ssh'
+alias sgpt=~/.local/share/pythonvirt/chatgpt/bin/sgpt

@@ -24,8 +24,8 @@ light-locker &
 nm-applet &
 
 # recompile dwm, st and probably other stuff with new theme(and maybe new config.h)
-#setbg /home/mathway/pics/wals/kali-ascii.png 
-xwallpaper --zoom /home/mathway/pics/wals/kali-ascii.png
+#setbg "$(cat ~/.last_wallpaper_path)"
+xwallpaper --zoom $(cat ~/.last_wallpaper_path)
 
 # setting PWD to home directory
 cd
@@ -48,9 +48,15 @@ compton &
 
 # SSH agent config
 eval $(ssh-agent -s)
-ssh-add -q ~/.ssh/id_rsa_eva
+# Enable port forwarding to my openwrt router
+ssh -N homenet &
+
+# start syncthing
+syncthing --no-browser </dev/null &>/dev/null &
+
 
 # smart way to run dwm
 while true; do
     dbus-launch --sh-syntax --exit-with-session dwm
 done
+
