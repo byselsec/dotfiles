@@ -26,3 +26,4 @@
 (global-set-key [?\C-ы] 'isearch-forward)
 (global-set-key [?\C-к] 'isearch-backward)
 
+(global-set-key [?\C-.] 'undo)

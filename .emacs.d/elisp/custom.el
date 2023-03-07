@@ -16,6 +16,8 @@
  '(company-idle-delay 0)
  '(completion-cycle-threshold nil)
  '(custom-enabled-themes '(deeper-blue))
+ '(custom-safe-themes
+   '("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default))
  '(dired-listing-switches "-alF --group-directories-first")
  '(display-line-numbers-type 'relative)
  '(erc-modules
@@ -45,7 +47,7 @@
  '(ispell-dictionary nil)
  '(line-move-visual nil)
  '(markdown-command-needs-filename t)
- '(markdown-open-command "mdbrowse" t)
+ '(markdown-open-command "/home/mathway/.local/bin/mdbrowse")
  '(next-line-add-newlines nil)
  '(next-screen-context-lines 4)
  '(org-fontify-done-headline nil)
