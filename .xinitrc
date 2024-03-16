@@ -49,14 +49,13 @@ compton &
 # SSH agent config
 eval $(ssh-agent -s)
 # Enable port forwarding to my openwrt router
-ssh -N homenet &
+#ssh -N homenet &
 
 # start syncthing
-syncthing --no-browser </dev/null &>/dev/null &
+#syncthing --no-browser </dev/null &>/dev/null &
 
 
 # smart way to run dwm
 while true; do
     dbus-launch --sh-syntax --exit-with-session dwm
 done
-

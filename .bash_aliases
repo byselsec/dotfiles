@@ -15,10 +15,11 @@ alias l='ls'
 alias lh='ls -hl'
 alias llh='lh'
 
-alias less='less -i'
+alias less='less -ir'
 alias le=less
 
 alias trans='trans en:ru'
+alias t=trans
 
 alias gdb='gdb -q'
 
@@ -32,7 +33,10 @@ alias ip='ip -c'
 
 alias hst="history | cut -c 8- | sort -u | fzf | tr '\\n' ' '"
 alias hstc="history | cut -c 8- | sort -u | fzf | tr '\\n' ' ' | xclip -sel c"
+alias xc='xclip -se clip'
 
 # work around unknown 'st-256color' terminal
 alias ssh='TERM=xterm ssh'
 alias sgpt=~/.local/share/pythonvirt/chatgpt/bin/sgpt
+
+alias lfs='sudo /usr/sbin/chroot /mnt/lfs /usr/bin/env -i HOME=/root TERM="$TERM" PS1="\u:\w\\\\$ " PATH=/bin:/usr/bin:/sbin:/usr/sbin /bin/bash --login'

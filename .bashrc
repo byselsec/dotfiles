@@ -34,7 +34,7 @@ source ~/.functions
 
 # Control how bash handles history of commands
 HISTCONTROL=ignoreboth
-HISTIGNORE="ls:[bf]g:exit:history:trans"
+HISTIGNORE="ls:[bf]g:exit:history:trans:shutdown"
 HISTSIZE=-1
 
 # Cd to directory by just typing its name
@@ -44,3 +44,8 @@ shopt -s autocd
 source ~/.prompts
 status_prompt
 
+export LFS=/mnt/lfs
+export SRC=/mnt/lfs/sources
+
+# Created by `pipx` on 2024-03-13 19:16:04
+export PATH="$PATH:/home/mathway/.local/bin"
