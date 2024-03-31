@@ -17,6 +17,7 @@ alias llh='lh'
 
 alias less='less -ir'
 alias le=less
+[[ -f ~/.less_termcap ]] && . ~/.less_termcap
 
 alias trans='trans en:ru'
 alias t=trans
