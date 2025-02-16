@@ -5,7 +5,7 @@
 
 ;; This allows to paste from X clipboard,
 ;; without clobbering emacs kill ring by above setting.
-(global-set-key (kbd "C-c C-y") 'x-clipboard-yank)
+(global-set-key (kbd "C-c C-y") 'clipboard-yank)
 
 (global-set-key (kbd "C-c $") 'term)
 ;; (defun term-other-window

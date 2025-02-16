@@ -17,12 +17,6 @@ if ! shopt -oq posix; then
     fi
 fi
 
-
-bind 'TAB:menu-complete'
-bind "set show-all-if-ambiguous on"
-bind "set menu-complete-display-prefix on"
-
-# Some useful aliases
 source ~/.bash_aliases
 
 # Some userfule functions
@@ -40,12 +34,9 @@ HISTSIZE=-1
 # Cd to directory by just typing its name
 shopt -s autocd
 
+# complete hostnames
+shopt -s hostcomplete
+
 # Setting up a prompt
 source ~/.prompts
 status_prompt
-
-export LFS=/mnt/lfs
-export SRC=/mnt/lfs/sources
-
-# Created by `pipx` on 2024-03-13 19:16:04
-export PATH="$PATH:/home/mathway/.local/bin"

@@ -1,2 +1,17 @@
 $include /etc/inputrc
+
+TAB: menu-complete
+"\C-w": kill-region
+"\M-w": copy-region-as-kill
+
+set editing-mode emacs
+set bell-style none
+
 set completion-ignore-case On
+set show-all-if-ambiguous on
+set menu-complete-display-prefix on
+set completion-ignore-case On
+set completion-map-case On
+set completion-query-items 80
+set skip-completed-text On
+set match-hidden-files Off

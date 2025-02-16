@@ -9,6 +9,3 @@ fi
 if [[ -f ~/.profile ]] ; then
     . ~/.profile
 fi
-
-# Created by `pipx` on 2024-03-13 19:16:04
-export PATH="$PATH:/home/mathway/.local/bin"
