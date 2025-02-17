@@ -16,7 +16,7 @@
 
 ;; where to search for C sources of emacs itself
 (setq find-function-C-source-directory
-      "/home/mathway/.local/src/emacs/src")
+      (concat (getenv "HOME") "/.local/src/emacs/src"))
 
 ;; for X version of emacs - this will copy
 ;; in system clipboard alongside kill ring.
@@ -24,8 +24,6 @@
 (setq x-select-enable-clipboard nil)
 
 
-;; Markdown and GFX mode configuration
+;; Markdown and GFM mode configuration
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 (setq markdown-open-command "mdbrowse")
-
-

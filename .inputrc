@@ -3,6 +3,7 @@ $include /etc/inputrc
 TAB: menu-complete
 "\C-w": kill-region
 "\M-w": copy-region-as-kill
+"\C-SPC": set-mark
 
 set editing-mode emacs
 set bell-style none
