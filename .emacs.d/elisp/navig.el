@@ -28,9 +28,9 @@
 (set-register ?x '(file . "~/.xinitrc"))
 (set-register ?b '(file . "~/.bashrc"))
 (set-register ?a '(file . "~/.bash_aliases"))
-(set-register ?n '(file . "~/.emacs.d/navig.el"))
-(set-register ?k '(file . "~/.emacs.d/keys.el"))
-(set-register ?g '(file . "~/.emacs.d/general.el"))
+(set-register ?n '(file . "~/.emacs.d/elisp/navig.el"))
+(set-register ?k '(file . "~/.emacs.d/elisp/keys.el"))
+(set-register ?g '(file . "~/.emacs.d/elisp/general.el"))
 
 ;; move lines(or region) up or down
 (move-text-default-bindings)

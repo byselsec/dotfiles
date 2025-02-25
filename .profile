@@ -13,5 +13,3 @@ PYTHONUSERBASE=~/.local/python ; export PYTHONUSERBASE
 _JAVA_AWT_WM_NONREPARENTING=1; export _JAVA_AWT_WM_NONREPARENTING
 
 EDITOR='emacsclient -t' ; export EDITOR
-
-[ -n "$DISPLAY" ] && xmodmap -e 'keycode 94 = backslash bar'

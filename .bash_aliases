@@ -40,4 +40,4 @@ alias xc='xclip -se clip'
 alias ssh='TERM=xterm ssh'
 alias sgpt=~/.local/share/pythonvirt/chatgpt/bin/sgpt
 
-alias lfs='sudo /usr/sbin/chroot /mnt/lfs /usr/bin/env -i HOME=/root TERM="$TERM" PS1="\u:\w\\\\$ " PATH=/bin:/usr/bin:/sbin:/usr/sbin /bin/bash --login'
+command -v systemctl &>/dev/null && alias sctl=systemctl

@@ -18,6 +18,7 @@ if ! shopt -oq posix; then
 fi
 
 source ~/.bash_aliases
+#declare -F _complete_alias &>/dev/null && complete -F _complete_alias "${!BASH_ALIASES[@]}"
 
 # Some userfule functions
 source ~/.functions

@@ -7,7 +7,12 @@
 ;; without clobbering emacs kill ring by above setting.
 (global-set-key (kbd "C-c C-y") 'clipboard-yank)
 
+;; Create terminal window
 (global-set-key (kbd "C-c $") 'term)
+
+;; Shortdoc shortcut
+(global-set-key (kbd "C-c s") 'shortdoc)
+
 ;; (defun term-other-window
 ;; (global-set-key (kbd "C-x 4 $") 'term-other-window)
 

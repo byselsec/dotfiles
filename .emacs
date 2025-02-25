@@ -9,6 +9,12 @@
 ;; Setup custom Custom file :)
 (setq custom-file "~/.emacs.d/elisp/custom.el")
 (load custom-file)
+
+;; When exiting emacs, check if there're any unsaved customizations, and
+;; if test succeeds, prompt user whether to save them.
+(add-hook 'kill-emacs-query-functions
+          'custom-prompt-customize-unsaved-options)
+
 ;; programming stuff
 (load "prog.el")
 ;; general key bindings

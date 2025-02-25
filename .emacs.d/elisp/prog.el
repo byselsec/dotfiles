@@ -2,7 +2,7 @@
 ;; Customizations for Programming
 ;; 
 
-;; customising cpreproc indentation
+;; customizing cpreproc indentation
 (require 'ppindent)
 
 ;; Customizing all programming modes at once.
@@ -10,7 +10,7 @@
 (add-hook 'prog-mode-hook 'show-paren-mode)
 (add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
 
-;; customising c-mode
+;; customizing c-mode
 (load "c-mode.el")
 
 ;; customizing c++-mode
@@ -28,3 +28,6 @@
 
 ;; python config
 (add-hook 'python-mode-hook 'show-paren-mode)
+
+;; customizing elisp
+(setq print-circle t)

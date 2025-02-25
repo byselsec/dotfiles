@@ -5,7 +5,7 @@ set print asm-demangle on
 #alias ctxd = gef config context.enable False
 # alias ctxe = gef config context.enable True
 
-source /home/mathway/.local/src/gef/gef.py
+source /home/bysel/.local/src/gef/gef.py
 
 alias ctxd = gef config context.enable False
 alias ctxe = gef config context.enable True
