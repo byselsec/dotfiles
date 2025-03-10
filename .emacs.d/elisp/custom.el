@@ -14,7 +14,19 @@
  '(apropos-sort-by-scores t)
  '(bookmark-save-flag 1)
  '(company-idle-delay 0)
- '(completion-cycle-threshold nil)
+ '(completion-auto-help 'visible)
+ '(completion-auto-select 'second-tab)
+ '(completion-category-overrides
+   '((file
+	  (styles emacs21 basic partial-completion)
+	  (cycle . 5))
+	 (buffer
+	  (styles emacs21 substring partial-completion flex)
+	  (cycle . 5))))
+ '(completion-cycle-threshold 5)
+ '(completion-styles '(basic partial-completion initials flex))
+ '(completions-format 'one-column)
+ '(completions-max-height 20)
  '(custom-enabled-themes '(deeper-blue))
  '(custom-safe-themes
    '("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default))
@@ -29,6 +41,7 @@
  '(erc-prompt-for-channel-key nil)
  '(erc-server "irc.libera.chat")
  '(fill-column 80)
+ '(goto-line-history-local t)
  '(hl-todo-keyword-faces
    '(("TODO" . "#dc752f")
 	 ("NEXT" . "#dc752f")
@@ -51,6 +64,7 @@
  '(line-move-visual nil)
  '(markdown-command-needs-filename t)
  '(markdown-open-command "/home/mathway/.local/bin/mdbrowse" t)
+ '(minibuffer-beginning-of-buffer-movement t)
  '(next-line-add-newlines nil)
  '(next-screen-context-lines 4)
  '(org-fontify-done-headline nil)

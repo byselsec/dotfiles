@@ -21,7 +21,7 @@
 (setq tab-always-indent 'complete)
 
 ;; Switch to completions buffer
-(define-key global-map (kbd "C-x t") 'switch-to-completions)
+(define-key global-map (kbd "C-c t") 'switch-to-completions)
 
 ;; disable some commands
 (put 'set-fill-column 'disabled t)
