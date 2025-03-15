@@ -2,6 +2,7 @@
 ;; Customizations for Programming
 ;; 
 
+
 ;; customizing cpreproc indentation
 (require 'ppindent)
 
@@ -31,3 +32,5 @@
 
 ;; customizing elisp
 (setq print-circle t)
+
+(provide 'rc/prog)

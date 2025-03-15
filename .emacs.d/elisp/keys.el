@@ -25,3 +25,4 @@
 ;; minibuffer keymap alteration
 (keymap-set minibuffer-local-completion-map "SPC" 'self-insert-command)
 
+(provide 'rc/keys)

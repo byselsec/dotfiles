@@ -31,6 +31,9 @@
 (set-register ?\C-n '(file . "~/.emacs.d/elisp/navig.el"))
 (set-register ?\C-k '(file . "~/.emacs.d/elisp/keys.el"))
 (set-register ?\C-l '(file . "~/.emacs.d/elisp/general.el"))
+(set-register ?\C-p '(file . "~/.emacs.d/elisp/prog.el"))
 
 ;; move lines(or region) up or down
 (move-text-default-bindings)
+
+(provide 'rc/navig)

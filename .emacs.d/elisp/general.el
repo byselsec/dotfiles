@@ -24,3 +24,10 @@
 ;; Markdown and GFM mode configuration
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 (setq markdown-open-command "mdbrowse")
+
+;; When exiting emacs, check if there're any unsaved customizations, and
+;; if test succeeds, prompt user whether to save them.
+(add-hook 'kill-emacs-query-functions
+          'custom-prompt-customize-unsaved-options)
+
+(provide 'rc/general)

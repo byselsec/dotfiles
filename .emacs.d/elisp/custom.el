@@ -89,6 +89,7 @@
  '(tab-width 4)
  '(undelete-frame-mode t)
  '(user-mail-address "mathway.home@gmail.com")
+ '(warning-minimum-level :error)
  '(warning-suppress-log-types '((comp) (comp)))
  '(warning-suppress-types '((comp))))
 
