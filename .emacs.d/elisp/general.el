@@ -2,6 +2,9 @@
 ;; General customizations
 ;;
 
+;; handle enabled & disabled commands
+(load "disabled.el")
+
 ;; Change font size
 (set-face-attribute 'default nil :height 120)
 
@@ -17,12 +20,6 @@
 ;; where to search for C sources of emacs itself
 (setq find-function-C-source-directory
       (concat (getenv "HOME") "/.local/src/emacs/src"))
-
-;; for X version of emacs - this will copy
-;; in system clipboard alongside kill ring.
-;; (setq x-select-enable-clipboard y)
-(setq x-select-enable-clipboard nil)
-
 
 ;; Markdown and GFM mode configuration
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))

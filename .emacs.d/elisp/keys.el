@@ -5,29 +5,23 @@
 
 ;; This allows to paste from X clipboard,
 ;; without clobbering emacs kill ring by above setting.
-(global-set-key (kbd "C-c C-y") 'clipboard-yank)
+(keymap-global-set "C-c C-y" 'clipboard-yank)
 
 ;; Create terminal window
-(global-set-key (kbd "C-c $") 'term)
+(keymap-global-set "C-c $" 'term)
+
+;; Create a term buffer in other window
+;; first form creates a keyboard macro variable
+;; and the second actually makes a use of it
+(fset 'term-other-window (kbd "C-x 4 4 C-c $"))
+(keymap-global-set "C-c 4 $" 'term-other-window)
 
 ;; Shortdoc shortcut
-(global-set-key (kbd "C-c s") 'shortdoc)
-
-;; (defun term-other-window
-;; (global-set-key (kbd "C-x 4 $") 'term-other-window)
-
-;; When line is unindented - make indentation.
-;; Otherwise, complete
-(setq tab-always-indent 'complete)
+(keymap-global-set "C-c s" 'shortdoc)
 
 ;; Switch to completions buffer
-(define-key global-map (kbd "C-c t") 'switch-to-completions)
-
-;; disable some commands
-(put 'set-fill-column 'disabled t)
-(put 'upcase-region 'disabled nil)
-(put 'narrow-to-region 'disabled nil)
+(keymap-global-set "C-c t" 'switch-to-completions)
 
 ;; minibuffer keymap alteration
-(define-key minibuffer-local-completion-map " " 'self-insert-command)
+(keymap-set minibuffer-local-completion-map "SPC" 'self-insert-command)
 

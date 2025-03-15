@@ -21,16 +21,16 @@
 (add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
 
 ;; Go to some file with just C-x r j <key>
-(set-register ?e '(file . "~/.emacs"))
-(set-register ?d '(file . "~/.local/src/dwm/config.h"))
-(set-register ?m '(file . "~/.local/src/dmenu/config.h"))
-(set-register ?s '(file . "~/.local/src/st/config.h"))
-(set-register ?x '(file . "~/.xinitrc"))
-(set-register ?b '(file . "~/.bashrc"))
-(set-register ?a '(file . "~/.bash_aliases"))
-(set-register ?n '(file . "~/.emacs.d/elisp/navig.el"))
-(set-register ?k '(file . "~/.emacs.d/elisp/keys.el"))
-(set-register ?g '(file . "~/.emacs.d/elisp/general.el"))
+(set-register ?\C-e '(file . "~/.emacs"))
+(set-register ?\C-d '(file . "~/.local/src/dwm/config.h"))
+(set-register ?\C-m '(file . "~/.local/src/dmenu/config.h"))
+(set-register ?\C-s '(file . "~/.local/src/st/config.h"))
+(set-register ?\C-x '(file . "~/.xinitrc"))
+(set-register ?\C-b '(file . "~/.bashrc"))
+(set-register ?\C-a '(file . "~/.bash_aliases"))
+(set-register ?\C-n '(file . "~/.emacs.d/elisp/navig.el"))
+(set-register ?\C-k '(file . "~/.emacs.d/elisp/keys.el"))
+(set-register ?\C-l '(file . "~/.emacs.d/elisp/general.el"))
 
 ;; move lines(or region) up or down
 (move-text-default-bindings)

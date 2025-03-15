@@ -23,7 +23,7 @@
 	 (buffer
 	  (styles emacs21 substring partial-completion flex)
 	  (cycle . 5))))
- '(completion-cycle-threshold 5)
+ '(completion-cycle-threshold nil)
  '(completion-styles '(basic partial-completion initials flex))
  '(completions-format 'one-column)
  '(completions-max-height 20)
@@ -85,6 +85,7 @@
  '(sentence-end-double-space nil)
  '(server-after-make-frame-hook '(desktop-read))
  '(shift-select-mode 'permanent)
+ '(tab-always-indent 'complete)
  '(tab-width 4)
  '(undelete-frame-mode t)
  '(user-mail-address "mathway.home@gmail.com")
