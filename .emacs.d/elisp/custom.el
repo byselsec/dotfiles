@@ -66,6 +66,7 @@
  '(markdown-open-command "/home/mathway/.local/bin/mdbrowse" t)
  '(max-mini-window-height 0.2)
  '(minibuffer-beginning-of-buffer-movement t)
+ '(mode-line-compact 'long)
  '(next-line-add-newlines nil)
  '(next-screen-context-lines 4)
  '(org-fontify-done-headline nil)

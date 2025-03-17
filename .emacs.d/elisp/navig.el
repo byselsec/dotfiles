@@ -3,22 +3,20 @@
 ;;
 
 ;; Minor mode for custom keybindings
-(defvar my-keys-minor-mode-map
+(defvar rc/keys-minor-mode-map
   (let ((map (make-sparse-keymap)))
     ;; Smooth scrolling
-    (define-key map (kbd "M-n") (kbd "C-u 2 C-v")) 
-    (define-key map (kbd "M-p") (kbd "C-u 2 M-v"))
+    (keymap-set map "M-n" "C-u 2 C-v") 
+    (keymap-set map "M-p" "C-u 2 M-v")
     map)
-  "my-keys-minor-mode keymap.")
-(define-minor-mode my-keys-minor-mode
+  "rc/keys-minor-mode keymap.")
+(define-minor-mode rc/keys-minor-mode
   "A minor mode so that my key settings override annoying major modes."
-  :init-value t
-  :lighter " my-keys")
-(my-keys-minor-mode 1)
-;; Disable my-keys minor mode while in minibuffer
-(defun my-minibuffer-setup-hook ()
-  (my-keys-minor-mode 0))
-(add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
+  :init-value nil
+  :lighter nil)
+(rc/keys-minor-mode 1)
+;; Disable rc/keys minor mode while in minibuffer
+(add-hook 'minibuffer-setup-hook (lambda () (rc/keys-minor-mode 0)))
 
 ;; Go to some file with just C-x r j <key>
 (set-register ?\C-e '(file . "~/.emacs"))
