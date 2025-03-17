@@ -5,7 +5,27 @@
 
 ;; This allows to paste from X clipboard,
 ;; without clobbering emacs kill ring by above setting.
-(keymap-global-set "C-c C-y" 'clipboard-yank)
+(keymap-global-set "C-c c y" 'clipboard-yank)
+
+;; enable/disable killing to clipboard
+(define-minor-mode rc/clip-shared-mode
+  "Minor mode showing whether sharing clipboard
+with the system is currently on."
+  :init-value nil
+  :lighter " Clip"
+  (if rc/clip-shared-mode
+	  (setq-local select-enable-clipboard t)
+	(setq-local select-enable-clipboard nil)))
+
+(keymap-global-set "C-c c e" (lambda ()
+							   (interactive)
+							   (rc/clip-shared-mode 1)))
+(keymap-global-set "C-c c d" (lambda ()
+							   (interactive)
+							   (rc/clip-shared-mode 0)))
+(keymap-global-set "C-c c t" (lambda ()
+							   (interactive)
+							   (rc/clip-shared-mode 'toggle)))
 
 ;; Create terminal window
 (keymap-global-set "C-c $" 'term)
@@ -18,9 +38,6 @@
 
 ;; Shortdoc shortcut
 (keymap-global-set "C-c s" 'shortdoc)
-
-;; Switch to completions buffer
-(keymap-global-set "C-c t" 'switch-to-completions)
 
 ;; minibuffer keymap alteration
 (keymap-set minibuffer-local-completion-map "SPC" 'self-insert-command)
