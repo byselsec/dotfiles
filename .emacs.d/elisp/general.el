@@ -30,4 +30,7 @@
 (add-hook 'kill-emacs-query-functions
           'custom-prompt-customize-unsaved-options)
 
+;; enable ido
+(ido-mode)
+
 (provide 'rc/general)
