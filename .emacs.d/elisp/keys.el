@@ -1,7 +1,8 @@
 ;; My key bindings
 
+;; UNNECESSARY: Use input method russian-computer!
 ;; Russian key bindings support
-(load "ru-keys.el")
+;; (load "ru-keys.el")
 
 ;; This allows to paste from X clipboard,
 ;; without clobbering emacs kill ring by above setting.
@@ -26,6 +27,7 @@ with the system is currently on."
 (keymap-global-set "C-c c t" (lambda ()
 							   (interactive)
 							   (rc/clip-shared-mode 'toggle)))
+(setq-default select-enable-clipboard nil)
 
 ;; Create terminal window
 (keymap-global-set "C-c $" 'term)
@@ -40,6 +42,9 @@ with the system is currently on."
 (keymap-global-set "C-c s" 'shortdoc)
 
 ;; minibuffer keymap alteration
-(keymap-set minibuffer-local-completion-map "SPC" 'self-insert-command)
+(keymap-unset minibuffer-local-completion-map "SPC")
+
+;; file convinience bindings
+(keymap-global-set "C-c f d" 'delete-file)
 
 (provide 'rc/keys)
