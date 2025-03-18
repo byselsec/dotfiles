@@ -44,6 +44,8 @@
  '(erc-server "irc.libera.chat")
  '(fill-column 80)
  '(goto-line-history-local t)
+ '(help-window-keep-selected t)
+ '(help-window-select t)
  '(hl-todo-keyword-faces
    '(("TODO" . "#dc752f")
 	 ("NEXT" . "#dc752f")
@@ -100,7 +102,8 @@
  '(user-mail-address "mathway.home@gmail.com")
  '(warning-minimum-level :error)
  '(warning-suppress-log-types '((comp) (comp)))
- '(warning-suppress-types '((comp))))
+ '(warning-suppress-types '((comp)))
+ '(what-cursor-show-names t))
 
 
 
