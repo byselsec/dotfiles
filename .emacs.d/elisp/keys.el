@@ -56,12 +56,19 @@ with the system is currently on."
   "V" #'apropos-value
   "f" #'apropos-function)
 
+(keymap-global-set "C-c a" 'ctl-c-a-prefix)
 
 
-;; file convinience bindings
-(keymap-global-set "C-c f d" #'delete-file)
 
-(keymap-global-set "C-c a" ctl-c-a-prefix)
+;; file-related bindings
+(defvar-keymap ctl-c-f-map
+  :doc "Prefix key for `C-c f'"
+  :prefix 'ctl-c-f-prefix
+  "d" #'delete-file)
+
+(keymap-global-set "C-c f" 'ctl-c-f-prefix)
+
+
 
 ;; Create terminal window
 (keymap-global-set "C-c $" #'term)
