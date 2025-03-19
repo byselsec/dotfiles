@@ -44,6 +44,25 @@ with the system is currently on."
 
 (setq-default select-enable-clipboard nil)
 
+
+
+;; add some apropos keybindings
+(defvar-keymap ctl-c-a-map
+  :doc "Prefix key for `C-c a'"
+  :prefix 'ctl-c-a-prefix
+  "a" #'apropos
+  "u" #'apropos-user-option
+  "v" #'apropos-variable
+  "V" #'apropos-value
+  "f" #'apropos-function)
+
+
+
+;; file convinience bindings
+(keymap-global-set "C-c f d" #'delete-file)
+
+(keymap-global-set "C-c a" ctl-c-a-prefix)
+
 ;; Create terminal window
 (keymap-global-set "C-c $" #'term)
 
@@ -58,20 +77,5 @@ with the system is currently on."
 
 ;; minibuffer keymap alteration
 (keymap-unset minibuffer-local-completion-map "SPC")
-
-;; file convinience bindings
-(keymap-global-set "C-c f d" #'delete-file)
-
-;; add some apropos keybindings
-(defvar-keymap ctl-c-a-map
-  :doc "Prefix key for `C-c a'"
-  :prefix 'ctl-c-a-prefix
-  "a" #'apropos
-  "u" #'apropos-user-option
-  "v" #'apropos-variable
-  "V" #'apropos-value
-  "f" #'apropos-function)
-
-(keymap-global-set "C-c a" ctl-c-a-prefix)
 
 (provide 'rc/keys)
