@@ -62,4 +62,16 @@ with the system is currently on."
 ;; file convinience bindings
 (keymap-global-set "C-c f d" #'delete-file)
 
+;; add some apropos keybindings
+(defvar-keymap ctl-c-a-map
+  :doc "Prefix key for `C-c a'"
+  :prefix 'ctl-c-a-prefix
+  "a" #'apropos
+  "u" #'apropos-user-option
+  "v" #'apropos-variable
+  "V" #'apropos-value
+  "f" #'apropos-function)
+
+(keymap-global-set "C-c a" ctl-c-a-prefix)
+
 (provide 'rc/keys)
