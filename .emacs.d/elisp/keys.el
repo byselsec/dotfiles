@@ -53,6 +53,8 @@ with the system is currently on."
   "a" #'apropos
   "u" #'apropos-user-option
   "v" #'apropos-variable
+  "l" #'apropos-local-variable
+  "L" #'apropos-local-value
   "V" #'apropos-value
   "f" #'apropos-function)
 
@@ -70,6 +72,15 @@ with the system is currently on."
 
 
 
+(defvar-keymap ctl-v-map
+  :doc "Prefix key for `C-c v'"
+  :prefix 'ctl-c-v-prefix
+  "s" #'set-variable)
+
+(keymap-global-set "C-c v" 'ctl-c-v-prefix)
+
+
+
 ;; Create terminal window
 (keymap-global-set "C-c $" #'term)
 
@@ -84,5 +95,8 @@ with the system is currently on."
 
 ;; minibuffer keymap alteration
 (keymap-unset minibuffer-local-completion-map "SPC")
+
+;; zap-up-to-char instead of zap-to-char
+(keymap-global-set "M-z" #'zap-up-to-char)
 
 (provide 'rc/keys)
