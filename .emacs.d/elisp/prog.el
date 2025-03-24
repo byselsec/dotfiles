@@ -1,6 +1,6 @@
 ;;
 ;; Customizations for Programming
-;; 
+;;
 
 
 ;; customizing cpreproc indentation
@@ -10,6 +10,7 @@
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (add-hook 'prog-mode-hook 'show-paren-mode)
 (add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
+(add-hook 'prog-mode-hook (lambda () (setq-local show-trailing-whitespace t)))
 
 ;; customizing c-mode
 (load "c-mode.el")
@@ -32,5 +33,8 @@
 
 ;; customizing elisp
 (setq print-circle t)
+
+;; diff mode customizations
+(add-hook 'diff-mode-hook (lambda () (rc/keys-mode -1)))
 
 (provide 'rc/prog)

@@ -52,6 +52,7 @@ with the system is currently on."
   :prefix 'ctl-c-a-prefix
   "a" #'apropos
   "u" #'apropos-user-option
+  "c" #'apropos-user-option
   "v" #'apropos-variable
   "l" #'apropos-local-variable
   "L" #'apropos-local-value
@@ -66,7 +67,12 @@ with the system is currently on."
 (defvar-keymap ctl-c-f-map
   :doc "Prefix key for `C-c f'"
   :prefix 'ctl-c-f-prefix
-  "d" #'delete-file)
+  "R" #'rename-visited-file
+  "r" #'rename-file
+  "v" #'view-file
+  "l" #'make-symbolic-link
+  "d" #'delete-file
+  "c" #'copy-file)
 
 (keymap-global-set "C-c f" 'ctl-c-f-prefix)
 
@@ -75,9 +81,46 @@ with the system is currently on."
 (defvar-keymap ctl-v-map
   :doc "Prefix key for `C-c v'"
   :prefix 'ctl-c-v-prefix
-  "s" #'set-variable)
+  "l" #'make-local-variable
+  "L" #'make-variable-buffer-local
+  "k" #'kill-local-variable
+  "c" #'customize-variable
+  "s" #'set-variable
+  "a" #'add-file-local-variable-prop-line
+  "A" #'add-file-local-variable
+  "r" #'delete-file-local-variable-prop-line
+  "R" #'delete-file-local-variable)
 
 (keymap-global-set "C-c v" 'ctl-c-v-prefix)
+
+
+
+(defvar-keymap ctl-d-map
+  :doc "Prefix key for `C-c d'"
+  :prefix 'ctl-d-prefix
+  "C-d" #'dired
+  "m" #'make-directory
+  "d" #'delete-directory
+  "l" #'list-directory
+  "c" #'copy-directory)
+
+(keymap-global-set "C-c d" 'ctl-d-prefix)
+
+
+
+(defvar-keymap ctl-b-map
+  :doc "Prefix key for `C-c b'"
+  :prefix 'ctl-b-prefix
+  "v" #'view-buffer
+  "V" #'view-mode
+  "r" #'rename-buffer
+  "R" #'read-only-mode
+  "u" #'rename-uniquely
+  "l" #'buffer-menu
+  "i" #'insert-buffer
+  "a" #'append-to-buffer)
+
+(keymap-global-set "C-c b" 'ctl-b-prefix)
 
 
 
@@ -98,5 +141,17 @@ with the system is currently on."
 
 ;; zap-up-to-char instead of zap-to-char
 (keymap-global-set "M-z" #'zap-up-to-char)
+
+;; get the definition of a word
+(keymap-global-set "M-s d" #'dictionary-search)
+
+;; same as M-%
+(keymap-global-set "M-s r" 'query-replace)
+
+;; same as C-M-%
+(keymap-global-set "M-s R" 'query-replace-regexp)
+
+(keymap-global-set "C-x u" 'undo-only)
+
 
 (provide 'rc/keys)

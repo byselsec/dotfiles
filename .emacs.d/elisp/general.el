@@ -33,4 +33,11 @@
 ;; enable ido
 (ido-mode)
 
+;; learn existing keymaps faster
+(which-key-mode)
+
+;(global-auto-revert-mode)
+;(setopt global-auto-revert-non-file-buffers t)
+(add-hook 'Buffer-menu-mode-hook 'auto-revert-mode)
+
 (provide 'rc/general)

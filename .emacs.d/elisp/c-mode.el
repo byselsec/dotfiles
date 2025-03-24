@@ -1,9 +1,14 @@
 ;;
 ;; C-mode customizations
-;; 
+;;
 
-(setq c-default-style "linux"
-      c-basic-offset 4)
+(setq c-default-style
+	  '((java-mode . "java")
+		(python-mode . "python")
+		(awk-mode . "awk")
+		(other . "linux")))
+(setq c-basic-offset 4
+      c-tab-always-indent 'comments)
 (add-hook 'c-mode-hook 'company-mode)
 (add-hook 'c-mode-hook 'flycheck-mode)
 (add-hook 'c-mode-hook 'show-paren-mode)
@@ -70,10 +75,7 @@ Returns t if successfull, nil otherwise."
 	(newline)
 	(forward-line -1)
 	(insert "#include " hs header he)
-	t))))
-      
-	
-	
+	t)))
 
 (defun c-include-header (header &optional arg)
   "Inserts a C preprocessor 'include' directive to include HEADER file. If ARG is
@@ -81,7 +83,7 @@ omitted or nil, header will be surrounded by '<>' brackets. Otherwise, it will b
 surrounded by double quotes '\"\"'.
 
 Algorithm for insertion is as follows:
-1. Make an insertion right before the first 'include' statement. 
+1. Make an insertion right before the first 'include' statement.
 2. Make an insertion before the first non-empty non-comment line, if previous failed.
 3. Otherwise, fail."
   (interactive "sHeader: \nP")
