@@ -124,6 +124,16 @@ with the system is currently on."
 
 
 
+(defvar-keymap ctl-o-map
+  :doc "Prefix key for `C-c o"
+  :prefix 'ctl-o-prefix
+  "a" #'org-agenda
+  "c" #'org-capture
+  "l" #'org-store-link)
+
+(keymap-global-set "C-c o" 'ctl-o-prefix)
+
+
 ;; Create terminal window
 (keymap-global-set "C-c $" #'term)
 
