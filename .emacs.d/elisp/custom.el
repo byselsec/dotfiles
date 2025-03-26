@@ -1,6 +1,6 @@
 ;;
 ;; file to be used by Custom, like customize-variable, etc...
-;; 
+;;
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -16,6 +16,9 @@
  '(auto-revert-remote-files t)
  '(backup-by-copying-when-linked t)
  '(bookmark-save-flag 1)
+ '(clean-buffer-list-kill-buffer-names
+   '("*Dictionary*" "*Help*" "*Apropos*" "*Buffer List*" "*Compile-Log*" "*info*"
+	 "*vc*" "*vc-diff*" "*diff*"))
  '(company-idle-delay 0)
  '(completion-auto-help 'visible)
  '(completion-auto-select 'second-tab)
@@ -90,6 +93,7 @@
  '(ido-everywhere t)
  '(ido-max-prospects 7)
  '(image-use-external-converter t)
+ '(imenu-auto-rescan t)
  '(inhibit-startup-buffer-menu t)
  '(inhibit-startup-screen t)
  '(isearch-allow-motion t)
@@ -113,17 +117,23 @@
  '(mode-line-compact 'long)
  '(next-line-add-newlines nil)
  '(next-screen-context-lines 4)
+ '(org-M-RET-may-split-line '((default)))
  '(org-fontify-done-headline nil)
  '(org-fontify-todo-headline nil)
+ '(org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id)
+ '(org-list-allow-alphabetical t)
+ '(org-list-demote-modify-bullet
+   '(("+" . "-") ("-" . #1="+") ("*" . #1#) ("1." . "1)") ("1)" . "1.")))
+ '(org-list-use-circular-motion t)
  '(org-special-ctrl-a/e t)
  '(org-special-ctrl-k t)
  '(outline-default-state 'outline-show-only-headings)
  '(package-hidden-regexps '("\\`cc-mode\\'"))
  '(package-selected-packages
-   '(move-text flycheck-rust rust-mode dashboard spacemacs-theme bash-completion
-			   company-shell lua-mode jedi company-jedi company-irony
-			   company-irony-c-headers flycheck-irony edit-indirect
-			   markdown-mode))
+   '(bash-completion company-irony company-irony-c-headers company-jedi
+					 company-shell dashboard edit-indirect ewal-spacemacs-themes
+					 flycheck-irony flycheck-rust jedi lua-mode markdown-mode
+					 move-text rust-mode spacemacs-theme))
  '(parse-sexp-ignore-comments t)
  '(pdf-view-midnight-colors '("#655370" . "#fbf8ef"))
  '(read-buffer-completion-ignore-case t)
@@ -142,6 +152,7 @@
  '(sentence-end-double-space nil)
  '(server-after-make-frame-hook '(desktop-read))
  '(shift-select-mode 'permanent)
+ '(show-paren-context-when-offscreen 'overlay)
  '(tab-always-indent 'complete)
  '(tab-bar-select-tab-modifiers '(super))
  '(tab-bar-show 1)

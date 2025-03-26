@@ -23,10 +23,10 @@
 (set-register ?\C-k '(file . "~/.emacs.d/elisp/keys.el"))
 (set-register ?\C-l '(file . "~/.emacs.d/elisp/general.el"))
 (set-register ?\C-p '(file . "~/.emacs.d/elisp/prog.el"))
+(set-register ?\C-c '(file . "~/.emacs.d/elisp/custom.el"))
 (set-register ?\C-x '(file . "~/.xinitrc"))
 (set-register ?\C-b '(file . "~/.bashrc"))
 (set-register ?\C-a '(file . "~/.bash_aliases"))
-
 
 
 ;; move lines(or region) up or down

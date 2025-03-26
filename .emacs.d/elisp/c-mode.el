@@ -6,16 +6,16 @@
 	  '((java-mode . "java")
 		(python-mode . "python")
 		(awk-mode . "awk")
-		(other . "linux")))
+		(other . "bsd")))
 (setq c-basic-offset 4
       c-tab-always-indent 'comments)
 (add-hook 'c-mode-hook 'company-mode)
 (add-hook 'c-mode-hook 'flycheck-mode)
-(add-hook 'c-mode-hook 'show-paren-mode)
 (add-hook 'c-mode-hook 'irony-mode)
 (add-hook 'c-mode-hook
 		  (lambda()
 			(define-key c-mode-map "\C-ci" 'c-include-header)))
+(add-hook 'c-mode-hook 'electric-pair-local-mode)
 
 (defun get-include-guard ()
   "Return a string suitable for use in a C/C++ include guard"
@@ -75,7 +75,7 @@ Returns t if successfull, nil otherwise."
 	(newline)
 	(forward-line -1)
 	(insert "#include " hs header he)
-	t)))
+	t))))
 
 (defun c-include-header (header &optional arg)
   "Inserts a C preprocessor 'include' directive to include HEADER file. If ARG is
